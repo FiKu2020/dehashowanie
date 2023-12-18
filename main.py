@@ -11,7 +11,32 @@
 # def sprawdztyphasha(text_do_odhashowania)
 # def lamanie_hasla(format,text_do_odhashowania,worldlista_sciezka,typhasha):
 #
-text_do_odhashowania = input("podaj text do odhashowania")
+
+import hashlib
+import sys
+
+zahaszowany_text = input("podaj text do odhashowania")
 wordlist = []
 
-def
+def breaking_hash(zahaszowany_text, typ_hasha, wordlist):
+   if typ_hasha == 'md5':
+            hash_function = hashlib.md5
+        elif typ_hasha == 'sha256':
+            hash_function = hashlib.sha256
+        elif typ_hasha == 'sha3-512':
+            hash_function = hashlib.sha3_512
+        else:
+            print("zły hash")
+            return
+   
+            with open(wordlist, "r") as read:
+                   
+
+    if __name__ == "__main__":
+        if len(sys.argv) != 4:
+            print("ok")
+        else:
+            zahaszowany_text = sys.argv[1]
+            typ_hasha = sys.argv[2]
+            Wordlist = sys.argv[3]
+            breaking_hash(zahaszowany_text, typ_hasha, Wordlist)
